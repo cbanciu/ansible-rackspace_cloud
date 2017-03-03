@@ -1,0 +1,9 @@
+---
+name: 'Test'
+algorithm: 'LEAST_CONNECTIONS'
+port: 80
+protocol: 'HTTP'
+state: present
+timeout: 120
+wait: yes
+

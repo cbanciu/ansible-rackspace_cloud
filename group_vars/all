@@ -1,0 +1,6 @@
+clb_enabled: 'yes'
+server_enabled: 'no'
+cdb_enabled: 'no'
+
+rackspace_credentials: '~/.rackspace_cloud_credentials'
+region: 'LON'

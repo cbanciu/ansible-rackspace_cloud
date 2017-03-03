@@ -1,0 +1,11 @@
+
+---
+- name: Build a Load Balancer
+  local_action:
+    credentials: "{{ rackspace_credentials }}"
+    region: "{{ region }}"
+    timeout: "{{ timeout }}"
+    wait: "{{ wait }}"
+    name: "{{ name }}"
+    module: rax_clb
+  register: clb
