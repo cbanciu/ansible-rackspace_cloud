@@ -1,7 +1,0 @@
-- name: Prepare cloud environment
-  hosts: localhost
-  gather_facts: False
-  roles:
-    - { role: clb, when: clb_enabled == 'yes' }
-    - { role: server, when: server_enabled == 'yes' }
-    - { role: cdb, when: cdb_enabled == 'yes' }

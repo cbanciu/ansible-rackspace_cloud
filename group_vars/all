@@ -1,5 +1,5 @@
-clb_enabled: 'yes'
-server_enabled: 'no'
+clb_enabled: 'no'
+server_enabled: 'yes'
 cdb_enabled: 'no'
 
 rackspace_credentials: '~/.rackspace_cloud_credentials'

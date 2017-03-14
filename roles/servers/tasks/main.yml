@@ -1,0 +1,34 @@
+
+---
+- name: Build Cloud servers 
+  local_action:
+    credentials: "{{ rackspace_credentials }}"
+    region: "{{ region }}"
+    group: "{{ server_group }}"
+    wait_timeout: "{{ timeout }}"
+    wait: "{{ wait }}"
+    state: present
+    name: "{{ server_name }}-%d"
+    image: "{{ server_image }}"
+    networks:
+     - public
+     - private
+    flavor: "{{ flavor }}"
+    module: rax
+    count: "{{ server_numbers }}"
+    exact_count: True
+    key_name: "{{ server_key }}"
+  register: rax
+
+- name: Add servers to some group
+  local_action:
+    module: add_host
+    hostname: "{{ item.name }}"
+    ansible_host: "{{ item.rax_accessipv4 }}"
+    ansible_ssh_pass: "{{ item.rax_adminpass }}"
+    groups: "{{ server_group }}"
+  with_items: "{{ rax.success }}"
+  when: rax.action == "create"
+
+
+

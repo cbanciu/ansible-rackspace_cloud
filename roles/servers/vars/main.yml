@@ -1,0 +1,10 @@
+---
+server_group: 
+server_name: 
+server_numbers: 
+timeout: 600
+wait: yes
+flavor: "general1-1"
+server_key: 
+server_image: "CentOS 6 (PVHVM)" 
+
